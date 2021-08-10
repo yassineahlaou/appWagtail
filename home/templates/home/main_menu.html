@@ -1,0 +1,20 @@
+{% load menu_tags %}
+
+<div style="position: fixed;top: 0; width: 100%;" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/">Yassine</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav me-auto">
+
+{% for item in menu_items %}
+         <li class="nav-item">
+    <a  class="nav-link"  href="{{ item.href }}">{{ item.text }}</a>
+         </li>
+{% endfor %}
+    </ul>
+    </div>
+        </div>
+</div>

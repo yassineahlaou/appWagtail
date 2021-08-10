@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+
+<div style="padding-top:50px;text-align:center">
+    <h2>{{ page.body|richtext }}</h2>
+</div>
+
+{% endblock %}

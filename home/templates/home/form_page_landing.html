@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags  wagtailimages_tags %}
+
+{% block content %}
+<div class="container-fluid"  style="padding: 16px;
+  margin-top: 30px;">
+<h2>{{ page.thank_you_text | richtext }}</h2>
+</div>
+{% endblock %}

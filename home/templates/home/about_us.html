@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+
+<!--<div style="padding-top:3cm">
+
+{% for item in page.gallery_images.all %}
+        <div style=" margin: 10px ; float: right">
+            {% image item.image fill-320x240 %}
+
+        </div>
+    {% endfor %}
+<h1 style="text-align:center">{{ page.title }}</h1>
+<div style="text-align:center"> {{ page.intro|richtext }}</div>
+
+</div>-->
+
+<!--{% for block in page.body %}
+      {% if block.block_type == 'heading' %}
+            <h1>{{ block.value }}</h1>
+        {% else %}
+            <section class="block-{{ block.block_type }}">
+                {% include_block block %}
+         </section>
+        {% endif %}
+    {% endfor %}-->
+
+
+
+{% block content %}
+
+
+<div class="container-fluid"  >
+
+{% with blocks=self.body %}
+
+    {% for block in blocks %}
+        {% if block.block_type == 'heading' %}
+            <h2 >{{ block.value }}</h2>
+        {% else %}
+           <section class="block-{{ block.block_type }}">
+               {{ block }}
+           </section>
+        {% endif %}
+    {% endfor %}
+
+{% endwith %}
+</div>
+{% endblock %}
